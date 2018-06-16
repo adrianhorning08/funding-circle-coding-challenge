@@ -52,8 +52,8 @@ function multiplyPrimes(matrix) {
 
 function run(n) {
   const primeNumbers = primes(n);
-  const mat = createMatrix(primeNumbers);
-  return multiplyPrimes(mat);
+  const matrix = createMatrix(primeNumbers);
+  return multiplyPrimes(matrix);
 }
 
 const n = process.argv[2];
@@ -64,7 +64,5 @@ module.exports = {
   isPrime: isPrime,
   primes: primes,
   createMatrix: createMatrix,
-  // fillMatrix: fillMatrix,
-  // multiplyPrimes: multiplyPrimes,
-  // run: run
+  multiplyPrimes: multiplyPrimes,
 };
