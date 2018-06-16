@@ -1,0 +1,26 @@
+{
+  "name": "funding_circle_coding_challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianhorning08/funding-circle-coding-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrianhorning08/funding-circle-coding-challenge/issues"
+  },
+  "homepage": "https://github.com/adrianhorning08/funding-circle-coding-challenge#readme",
+  "dependencies": {
+    "jest": "^23.1.0"
+  }
+}
