@@ -65,6 +65,19 @@ function run(n) {
   return multiply(filled);
 }
 
+function sum(a, b) {
+  return a + b;
+}
+
 const n = process.argv[2];
 
 console.log(run(n));
+
+module.exports = {
+  isPrime: isPrime,
+  primes: primes,
+  createMatrix: createMatrix,
+  fillMatrix: fillMatrix,
+  multiply: multiply,
+  run: run
+};
