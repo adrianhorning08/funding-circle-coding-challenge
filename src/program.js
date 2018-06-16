@@ -1,5 +1,6 @@
 function primes(n) {
   // O(log n)
+  if (n === 0) return [];
   const primeNums = [2];
   let i = 3;
   while (primeNums.length < n) {
@@ -26,28 +27,19 @@ function isPrime(n) {
   return true;
 }
 
-function createMatrix(len) {
+function createMatrix(primes) {
   const matrix = [];
-
-  while (len >= 0) {
-    matrix.push([]);
-    len--;
-  }
-  return matrix;
-}
-
-function fillMatrix(matrix, primes) {
-  matrix[0].push('');
+  matrix.push(['']);
   for (let i = 0; i < primes.length; i++) {
     matrix[0].push(primes[i]);
   }
-  for (let i = 1; i < matrix.length; i++) {
-    matrix[i][0] = primes[i-1];
+  for (let i = 0; i < primes.length; i++) {
+    matrix.push([primes[i]]);
   }
   return matrix;
 }
 
-function multiply(matrix) {
+function multiplyPrimes(matrix) {
   let i = 1;
   while (i < matrix.length) {
     for (let j = 1; j < matrix[0].length; j++) {
@@ -59,14 +51,9 @@ function multiply(matrix) {
 }
 
 function run(n) {
-  const ps = primes(n);
-  const mat = createMatrix(n);
-  const filled = fillMatrix(mat, ps);
-  return multiply(filled);
-}
-
-function sum(a, b) {
-  return a + b;
+  const primeNumbers = primes(n);
+  const mat = createMatrix(primeNumbers);
+  return multiplyPrimes(mat);
 }
 
 const n = process.argv[2];
@@ -77,7 +64,7 @@ module.exports = {
   isPrime: isPrime,
   primes: primes,
   createMatrix: createMatrix,
-  fillMatrix: fillMatrix,
-  multiply: multiply,
-  run: run
+  // fillMatrix: fillMatrix,
+  // multiplyPrimes: multiplyPrimes,
+  // run: run
 };
