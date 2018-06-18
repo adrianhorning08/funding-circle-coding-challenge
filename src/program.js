@@ -25,7 +25,7 @@ function isPrime(n) {
   return true;
 }
 
-function createMatrix(primes) {
+function createFirstRowColumn(primes) {
   const matrix = [];
   matrix.push(['']);
   for (let i = 0; i < primes.length; i++) {
@@ -49,7 +49,7 @@ function multiplyPrimes(matrix) {
 
 function run(n = 10) {
   const primeNumbers = primes(n);
-  const matrix = createMatrix(primeNumbers);
+  const matrix = createFirstRowColumn(primeNumbers);
   return multiplyPrimes(matrix);
 }
 
@@ -60,6 +60,6 @@ console.log(run());
 module.exports = {
   isPrime: isPrime,
   primes: primes,
-  createMatrix: createMatrix,
+  createFirstRowColumn: createFirstRowColumn,
   multiplyPrimes: multiplyPrimes,
 };

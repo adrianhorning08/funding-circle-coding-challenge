@@ -29,9 +29,9 @@ describe('isPrime', () => {
   });
 });
 
-describe('createMatrix', () => {
-  const tenPrimes = program.createMatrix(program.primes(10));
-  const fifteenPrimes = program.createMatrix(program.primes(15));
+describe('createFirstRowColumn', () => {
+  const tenPrimes = program.createFirstRowColumn(program.primes(10));
+  const fifteenPrimes = program.createFirstRowColumn(program.primes(15));
   test('creates matrix 11 columns when n is 10 (1 column for prime numbers)', () => {
     expect(tenPrimes[0]).toHaveLength(11);
   });
@@ -51,8 +51,8 @@ describe('createMatrix', () => {
 });
 
 describe('multiplyPrimes', () => {
-  const tenPrimes = program.multiplyPrimes(program.createMatrix(program.primes(10)));
-  const fivePrimes = program.multiplyPrimes(program.createMatrix(program.primes(5)));
+  const tenPrimes = program.multiplyPrimes(program.createFirstRowColumn(program.primes(10)));
+  const fivePrimes = program.multiplyPrimes(program.createFirstRowColumn(program.primes(5)));
   const rowOne = [2,4,6,10,14,22,26,34,38,46,58];
   const rowTwo = [3,6,9,15,21,33,39,51,57,69,87];
   const lastRow = [11,22,33,55,77,121];
