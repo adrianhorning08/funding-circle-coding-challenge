@@ -1,5 +1,4 @@
 function primes(n) {
-  // O(log n)
   if (n === 0) return [];
   const primeNums = [2];
   let i = 3;
@@ -14,7 +13,6 @@ function primes(n) {
 }
 
 function isPrime(n) {
-  // O(sqrt(n))
   if (n <= 1)  return false;
   if (n <= 3)  return true;
   if (n % 2 === 0) return false;
@@ -40,25 +38,24 @@ function createMatrix(primes) {
 }
 
 function multiplyPrimes(matrix) {
-  let i = 1;
-  while (i < matrix.length) {
+  for (let i = 1; i < matrix.length; i++) {
     for (let j = 1; j < matrix[0].length; j++) {
       matrix[i].push(matrix[0][j] * matrix[i][0]);
     }
-    i++;
   }
   return matrix;
 }
 
-function run(n) {
+
+function run(n = 10) {
   const primeNumbers = primes(n);
   const matrix = createMatrix(primeNumbers);
   return multiplyPrimes(matrix);
 }
 
-const n = process.argv[2];
 
-console.log(run(n));
+const n = process.argv[2];
+console.log(run());
 
 module.exports = {
   isPrime: isPrime,
