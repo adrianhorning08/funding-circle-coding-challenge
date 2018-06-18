@@ -1,6 +1,14 @@
 # Funding Circle Coding Challenge
 
-## How to Run
+## Overview
+Write a program that prints out a multiplication table of the first 10 prime number.
+* The program must run from the command line and print one table to
+STDOUT.
+* The first row and column of the table should have the 10 primes, with each
+cell containing the product of the primes for the corresponding row and
+column.
+
+## Usage
 1. Clone Repo
 2. Run `npm install` to install dependencies
 3. Run `node src/program n` where `n` defaults to 10
@@ -23,9 +31,13 @@ $ node src/program
   ]
 ```
 
+## Testing
+I used Jest as a testing framework.
+Tests are found in the `test/` folder. They can be run with the command `npm test`
+
 ## Functions
 ### `primes(n)`
-Returns array of first `n` primes. 
+Returns array of first `n` primes.
 
 Runs in linear time complexity because the function ends when the length of the array is `n`.
 
@@ -50,10 +62,6 @@ Simply runs the entire program and returns the multiplication table.
 Runs in constant time because it just calls the other helper functions.
 
 ## Time Complexity
-Overall, the run time is O(n+1<sup>2</sup>)
-It is n+1 instead of just n because of the additional row and column needed for the prime numbers.
-This scales poorly, but since the entire multiplication table has to be filled out, the algorithm cannot run more efficiently.
+Overall, the run time is O(n<sup>2</sup>)
 
-## Testing
-I used Jest as a testing framework.
-Tests are found in the `test/` folder. They can be run with the command `npm test`
+This scales poorly, but since the entire multiplication table has to be filled out, the algorithm cannot run more efficiently.
