@@ -38,23 +38,26 @@ Tests are found in the `test/` folder. They can be run with the command `npm tes
 ## Functions
 ### `primes(n)`
 Returns array of first `n` primes.
+The function runs until the output array is of `n` length. It keeps track of an index that starts at 3 and increments by 2, checking to see if the number is prime. If it is, pushes it onto the array. It increments by 2 because primes are never next to each other (except 2 and 3).
 
-Runs in linear time complexity because the function ends when the length of the array is `n`.
+The runtime for this is O(n). Since the order of growth increases linearly as the size of the input increases.
 
 ### `isPrime(n)`
 Returns boolean. Returns `true` if `n` is prime.
+This function loops from 3 - sqrt(n) checking to see if the test factor is evenly divisible by the test factor, if it is, the function will return false.
 
-Runs in O(sqrt(n)) because instead of having to check every number from 2-n, we can just check every number 3-sqrt(n)
+Runs in O(sqrt(n)). Since we only need to check if `n` is evenly divisible by the smaller factors of the number, we can avoid checking all the numbers greater than sqrt(n).
 
 ### `createMatrix(primes)`
 Returns the first row and column of the multiplication table. Which are the first `n` prime numbers.
+First create a matrix array with a blank space at the beginning, then looped over the prime numbers generated from `primes(n)` and pushed the prime numbers into the first array in the matrix, then looped over `primes(n)` again and pushed the prime number as its own array into the matrix (creating columns).
 
-Runs in O(n) because it just iterates over the length of primes twice.
+Runs in O(n) because it just iterates over the length of the primes array twice.
 
 ### `multiplyPrimes(matrix)`
 Multiplies the prime numbers and returns the multiplication table, which is a matrix.
 
-Runs in O(n<sup>2</sup>) because it has to create the multiplication table and populate entire matrix.
+Runs in O(n<sup>2</sup>) because it has to populate the multiplication table (which is matrix) by looping over the entire row for every ith column.  
 
 ### `run`
 Simply runs the entire program and returns the multiplication table.
