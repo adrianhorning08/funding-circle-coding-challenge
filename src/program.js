@@ -27,7 +27,7 @@ function isPrime(n) {
 
 function createFirstRowColumn(primes) {
   const matrix = [];
-  matrix.push(['']);
+  matrix.push(['-']);
   for (let i = 0; i < primes.length; i++) {
     matrix[0].push(primes[i]);
   }
@@ -46,16 +46,37 @@ function multiplyPrimes(matrix) {
   return matrix;
 }
 
+function printTable(matrix) {
+  const lastRow = matrix[matrix.length - 1];
+  const biggest = lastRow[lastRow.length-1].toString().length;
+  let table = '';
+
+  for (var i = 0; i < matrix.length; i++) {
+    for (var j = 0; j < matrix[i].length; j++) {
+      let currNum = matrix[i][j];
+      let padding = ' '.repeat(biggest - currNum.toString().length);
+      table += `${currNum.toString()} ${padding} `;
+    }
+    table += '\n';
+  }
+  return table;
+}
 
 function run(n = 10) {
   const primeNumbers = primes(n);
-  const matrix = createFirstRowColumn(primeNumbers);
-  return multiplyPrimes(matrix);
+  const firstRowCol = createFirstRowColumn(primeNumbers);
+  const matrix = multiplyPrimes(firstRowCol);
+  return printTable(matrix);
 }
 
-
 const n = process.argv[2];
-console.log(run());
+
+if (n > 0 && n < Infinity || n === undefined) {
+  process.stdout.write(run(n));
+} else {
+  process.stderr.write('Invalid integer. Please enter a positive integer');
+  process.exit(1);
+}
 
 module.exports = {
   isPrime: isPrime,

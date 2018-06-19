@@ -54,17 +54,8 @@ First it creates a matrix array with a blank space at the beginning, then loops 
 
 Runs in O(n) because it iterates over the length of the primes array twice.
 
-### `multiplyPrimes(matrix)`
-Multiplies the prime numbers together and returns the multiplication table, which is a matrix.
-
-Runs in O(n<sup>2</sup>) because it has to populate the multiplication table by looping over the entire row for every ith column.  
-
-### `run`
-Simply runs the entire program and returns the multiplication table.
-
-Runs in constant time because it just calls the other helper functions.
 
 ## Time Complexity
-Overall, the run time is O(n<sup>2</sup>)
+Overall, the run time is O(n<sup>2</sup>) because of `multiplyPrimes`, which is filling out the multiplication table.
 
 This scales poorly, but since the entire multiplication table has to be filled out, the algorithm cannot run more efficiently.
