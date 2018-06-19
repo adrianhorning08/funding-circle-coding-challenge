@@ -1,5 +1,5 @@
 function primes(n) {
-  if (n === 0) return [];
+  if (n == 0) return [];
   const primeNums = [2];
   let i = 3;
   while (primeNums.length < n) {
@@ -71,7 +71,7 @@ function run(n = 10) {
 
 const n = process.argv[2];
 
-if (n > 0 && n < Infinity || n === undefined) {
+if (n >= 0 && n < Infinity || n === undefined) {
   process.stdout.write(run(n));
 } else {
   process.stderr.write('Invalid integer. Please enter a positive integer');

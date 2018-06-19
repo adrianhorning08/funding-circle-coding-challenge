@@ -45,7 +45,7 @@ describe('createFirstRowColumn', () => {
     expect(fifteenPrimes).toHaveLength(16);
   });
   test('returns correct first row when n is 10', () => {
-    const firstRow = ['', 2,3,5,7,11,13,17,19,23,29];
+    const firstRow = ['-', 2,3,5,7,11,13,17,19,23,29];
     expect(tenPrimes[0]).toEqual(firstRow);
   });
 });
