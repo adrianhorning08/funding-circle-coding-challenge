@@ -66,3 +66,14 @@ describe('multiplyPrimes', () => {
     expect(fivePrimes[fivePrimes.length-2]).toEqual(secondToLastRow);
   });
 });
+
+describe('printTable', () => {
+  test('- should be returned when n is 0', () => {
+    const zeroTable = program.printTable(program.multiplyPrimes(program.createFirstRowColumn(program.primes(0))));
+    expect(zeroTable).toEqual('-');
+  });
+  test('the table returns true when n is 2', () => {
+    const twoTable = program.printTable(program.multiplyPrimes(program.createFirstRowColumn(program.primes(1))));
+    expect(twoTable).toEqual('- 2 \n2 4 \n');
+  });
+});

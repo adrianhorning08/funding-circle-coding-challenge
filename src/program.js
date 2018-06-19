@@ -47,6 +47,7 @@ function multiplyPrimes(matrix) {
 }
 
 function printTable(matrix) {
+  if (matrix.length === 1) return '-';
   const lastRow = matrix[matrix.length - 1];
   const biggest = lastRow[lastRow.length-1].toString().length;
   let table = '';
@@ -55,7 +56,7 @@ function printTable(matrix) {
     for (var j = 0; j < matrix[i].length; j++) {
       let currNum = matrix[i][j];
       let padding = ' '.repeat(biggest - currNum.toString().length);
-      table += `${currNum.toString()} ${padding} `;
+      table += `${currNum.toString()}${padding} `;
     }
     table += '\n';
   }
@@ -83,4 +84,6 @@ module.exports = {
   primes: primes,
   createFirstRowColumn: createFirstRowColumn,
   multiplyPrimes: multiplyPrimes,
+  printTable: printTable,
+  run: run
 };
